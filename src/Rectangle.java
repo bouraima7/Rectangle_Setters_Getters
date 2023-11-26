@@ -1,3 +1,6 @@
+
+import java.util.*;
+
 public class Rectangle {
     private double width;
     private double height;
@@ -53,4 +56,16 @@ public class Rectangle {
     private boolean isValid(double value) {
         return value > 0.0 && value <= 20.0;
     }
+
+
+
+static class RectangleComparator implements Comparator<Rectangle> {
+    @Override
+    public int compare(Rectangle r1, Rectangle r2) {
+        // Compare rectangles based on their areas
+        return (int) (r1.calcArea() - r2.calcArea());
+    }
 }
+
+    }
+
